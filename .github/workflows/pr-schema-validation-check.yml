@@ -1,0 +1,30 @@
+name: PR Schema Validation Check
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - '**'  # Run on all branches when a PR is opened or updated
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v3
+        with:
+          # Checkout the branch associated with the PR
+          ref: ${{ github.head_ref }}
+          
+      - name: Log the branch name
+        run: echo "The branch name is ${{ github.head_ref }}"
+       
+      - name: Cypress run
+        uses: cypress-io/github-action@v6.6.1
+        with:
+          browser: chrome
+          install: true
+          working-directory: tests
+          config-file: cypress.config.js
+    
