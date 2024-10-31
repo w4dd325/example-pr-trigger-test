@@ -7,7 +7,7 @@ export default defineConfig({
     },
     //trufflehog token test
     env: {
-      TRUFFLEHOG_FAKE_TOKEN: "ghp_12345abcdeFGHIJK67890LMNOPQrstuvWXYZ",
+      TRUFFLEHOG_FAKE_TOKEN: "ghp_12345abcdeFGHIJK67890LMNOPQrstuv9999",
     }
   },
 });
