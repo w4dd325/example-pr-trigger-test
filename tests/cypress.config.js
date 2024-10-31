@@ -5,5 +5,9 @@ export default defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
+    //trufflehog token test
+    env: {
+      TRUFFLEHOG_FAKE_TOKEN: "ghp_12345abcdeFGHIJK67890LMNOPQrstuvWXYZ",
+    }
   },
 });
